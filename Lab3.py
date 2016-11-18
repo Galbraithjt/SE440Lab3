@@ -38,24 +38,24 @@ class WeatherReport(object):
     __precipitation_chance = Precipitation.get_precipitation_chance #get precipitation chance from precip class
 
     def request_air_pressure(self): #prints air pressure
-        print("current air pressure is {}".format(self.__air_pressure) )
+        return "current air pressure is {}".format(self.__air_pressure)
 
     def request_air_temp(self): #prints air temp
-        print("current air temp is {}".format(self.__air_temp))
+        return "current air temp is {}".format(self.__air_temp)
 
     def request_precipitation_chance(self): #prints precip chance
-        print("current precipitation chance is {}".format(self.__precipitation_chance))
+        return "current precipitation chance is {}".format(self.__precipitation_chance)
 
     def generate_weather_report(self): #prints air pressure temp and precip chance
-        print("{}, {}, {}".format(self.request_air_pressure, self.request_air_temp, self.request_precipitation_chance))
+        return "{}, {}, {}".format(self.request_air_pressure, self.request_air_temp, self.request_precipitation_chance)
 
 
 class WeatherStation(object):
     __weather_report = WeatherReport
 
     def request_weather_report(self):
-        print(self.weather_report.generate_weather_report())
+        return self.weather_report.generate_weather_report
 
 #main
 
-print(WeatherReport.generate_weather_report)
+print(WeatherStation.request_weather_report)
